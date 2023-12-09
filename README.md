@@ -69,7 +69,7 @@ repeatMinute = 25
 Once you have completed all the previous steps, you will be able to safely execute Bot.py
 This will open the file and start the Bot, logging all the rolls and actions made. The console should look like this:
 (note that if you set the minute to 25, the bot won't roll until it's that time every hour)
-![image](https://github.com/GuilleDiazFentanes/Mudae-AutoRoll-AutoClaim-AutoReact-2023/assets/152492889/a78ba39d-b068-45bb-9d13-6b202f31cda2)
+![image](https://github.com/GuilleDiazFentanes/AutoClaim-AutoRoll-AutoReact-MudaeBot-2023/assets/152492889/dc917487-53ab-44ff-8d39-4c5386d6d11b)
 
 ## Possible Errors
 - Mudae has no access/write/read permission to the channel you decided
