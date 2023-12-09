@@ -53,7 +53,7 @@ You also choose what Discord account you want to execute the code in and on what
 + `repeatMinute` - You can choose what exact minute of the hour will the Bot roll (value between 00 and 59, will be set to 25 by default)
 
 ##### Example of correctly filled variables
-Depending on the variable type (boolean, string, int or array), the data might be between quotes or not. Please pay attention to it
+Depending on the variable type (boolean, string, int or array), the data might be between quotes or not. Please pay attention to it.
 In the example, the token, channelId and serverdId are invented fields.
 ```python
 token = 'MTE4MDIyNzU4NTUzNjQzNDMxNw.GDXjNH.YqGhIq7GwyVHSk9sf9zod3AACAffJeZiynTexc' 
