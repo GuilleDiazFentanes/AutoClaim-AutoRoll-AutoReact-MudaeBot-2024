@@ -44,7 +44,7 @@ You also choose what Discord account you want to execute the code in and on what
 + `channelId` - ID of the channel you want to roll in → [How to get a channel ID](https://docs.statbot.net/docs/faq/general/how-find-id/)  
 + `serverId` - ID of the server/guild you want to roll in → [How to get a server/guild ID](https://docs.statbot.net/docs/faq/general/how-find-id/)  
 
-** Optional variables** : They are already filled by default, but you can change them if you want (specialy the desiredSeries one)
+**Optional variables** : They are already filled by default, but you can change them if you want (specialy the desiredSeries one)
 
 + `rollCommand` - Choose what command (only one) will the bot use to roll (mx, ma, mg, wx, wg, wa, hx, ha or hg)
 + `desiredKakeras` - **Case-sensitive** - Array of kakera types between single quotes separated by comas (see example below)
