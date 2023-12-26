@@ -1,4 +1,4 @@
-import vars
+import Vars
 import time
 import schedule
 from Function import simpleRoll
