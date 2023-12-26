@@ -14,19 +14,21 @@ def simpleRoll():
 
     print('Starting to Roll')
     i = 1
+    x = 0
     rollCommand = SlashCommander(bot.getSlashCommands(botID).json()).get([Vars.rollCommand])
     continueRolling = True
 
-    while continueRolling == True:
+    while continueRolling == True or x < 4:
 
-        bot.triggerSlashCommand(botID, Vars.channelId, Vars.serverdId, data = rollCommand)
-        time.sleep(2.6)
+        bot.triggerSlashCommand(botID, Vars.channelId, Vars.serverId, data = rollCommand)
+        time.sleep(1.2)
         r = requests.get(url , headers = auth )
         jsonCard = json.loads(r.text)
 
         if (len(jsonCard[0]['content']) != 0):
+            x += 1  
             continueRolling = False
-            break
+            continue
         idMessage = (jsonCard[0]['id'])
         try:
             cardName = (jsonCard[0]['embeds'][0]['author']['name'])
@@ -37,10 +39,13 @@ def simpleRoll():
             cardSeries = 'null'
 
         try:
-            cardsKakera = (jsonCard[0]['components'][0]['components'][0]['emoji']['name']) #kakera de la carta
+            cardsKakera = (jsonCard[0]['components'][0]['components'][0]['emoji']['name'])
+            print(cardsKakera)
+            print(Vars.desiredKakeras)
             if cardsKakera in Vars.desiredKakeras:
                 print('Trying to react to '+ cardsKakera)
-                bot.click( jsonCard[0]['author']['id'], channelID =jsonCard[0]['channel_id'], guildID=Vars.serverdId, messageID=jsonCard[0]['id'], messageFlags=jsonCard[0]['flags'], data={'component_type': 2, 'custom_id': jsonCard[0]['components'][0]['components'][0]['custom_id']},    )               
+                bot.click( jsonCard[0]['author']['id'], channelID =jsonCard[0]['channel_id'], guildID = Vars.serverId, messageID=jsonCard[0]['id'], messageFlags=jsonCard[0]['flags'], data={'component_type': 2, 'custom_id': jsonCard[0]['components'][0]['components'][0]['custom_id']},)
+
         except IndexError:
             cardsKakera = 'null'
 
