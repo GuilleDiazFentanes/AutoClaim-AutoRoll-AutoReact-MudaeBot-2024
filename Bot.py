@@ -3,7 +3,7 @@ import time
 import schedule
 from Function import simpleRoll
 
-timeString = ':'+ str(Vars.repeatMinute)
+timeString = ':'+ Vars.repeatMinute
 schedule.every().hour.at(timeString).do(simpleRoll)
 
 while True:
