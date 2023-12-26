@@ -1,6 +1,6 @@
 token = ''  
 channelId = ''                 
-serverdId = ''         
+serverId = ''         
 
 rollCommand= 'wa'
 desiredKakeras = ['kakeraP','kakeraY','kakeraO','kakeraR','kakeraW','kakeraL']
