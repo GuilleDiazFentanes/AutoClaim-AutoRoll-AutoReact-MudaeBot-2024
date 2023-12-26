@@ -88,6 +88,7 @@ These are the advanced Bot features:
 - **ALL** the previous features
 - **Desired Characters**: AutoClaim the exact characters when they appear with priority over all!
 - **Optimized Kakera react**: The bot will use an algorithm to prioritize higher Kakera values without losing any efficiency
+- **Optimized claiming**: In order to not losing the claim, it will get the max value card in case it doesn't match any desired series or cards
 - **Optimized $dk use**: The bot will perfectly use and take into account the DK command to get even more effective kakera reactions
 - **Optimized $rt use**: In case of not having an available claim, the Bot will use the $rt command to be able to claim
 - **Optimized $daily use**: Use the daily command each time it is available
