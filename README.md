@@ -66,13 +66,12 @@ pokeRoll = True
 repeatMinute = '25'
 ```
 ##### Execution
+![image](https://github.com/GuilleDiazFentanes/AutoClaim-AutoRoll-AutoReact-MudaeBot-2023/assets/152492889/b39973db-35b7-4de4-a111-95c40de5c04d)
 Once you have completed all the previous steps, you will be able to safely execute Bot.py
-This will open the file and start the Bot, logging all the rolls and actions made. The console should look like this:
+This will open the file and start the Bot, logging all the rolls and actions made. The console should look like the image
 (note that if you set the minute to 25, the bot won't roll until it's that time every hour)
 Red heart -> already claimed cards
 White heart -> not claimed yet cards
-![image](https://github.com/GuilleDiazFentanes/AutoClaim-AutoRoll-AutoReact-MudaeBot-2023/assets/152492889/b39973db-35b7-4de4-a111-95c40de5c04d)
-
 
 ## Possible Errors
 - Mudae has no access/write/read permission to the channel you decided
