@@ -58,12 +58,12 @@ In the example, the token, channelId and serverdId are invented fields.
 ```python
 token = 'MTE4MDIyNzU4NTUzNjQzNDMxNw.GDXjNH.YqGhIq7GwyVHSk9sf9zod3AACAffJeZiynTexc' 
 channelId = '1182144443902599230'                 
-serverdId = '816317249082097684'                  
+serverId = '816317249082097684'                  
 rollCommand= 'wa'
-desiredKakeras= ['KakeraP','KakeraY','KakeraO','KakeraR','KakeraW','KakeraL']
+desiredKakeras= ['kakeraP','kakeraY','kakeraO','kakeraR','kakeraW','kakeraL']
 desiredSeries = ['One Piece','Dragon Ball Z','Death Note']
 pokeRoll = True
-repeatMinute = 25
+repeatMinute = '25'
 ```
 ##### Execution
 Once you have completed all the previous steps, you will be able to safely execute Bot.py
@@ -76,6 +76,7 @@ This will open the file and start the Bot, logging all the rolls and actions mad
 - Your Discord Token may have changed
 - Your Mudae settings always have a button on each character roll
 - Series and Characters are case-sensitive
+- Your account must have a DM (at any time) with the mudae bot (try $help to make sure)
 
 ## Advanced Bot
 
