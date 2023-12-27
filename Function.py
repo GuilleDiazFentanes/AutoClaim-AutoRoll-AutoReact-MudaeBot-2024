@@ -21,7 +21,7 @@ def simpleRoll():
     rollCommand = SlashCommander(bot.getSlashCommands(botID).json()).get([Vars.rollCommand])
     continueRolling = True
 
-    while continueRolling == True or x < 3:
+    while continueRolling == True or x < 4:
 
         bot.triggerSlashCommand(botID, Vars.channelId, Vars.serverId, data = rollCommand)
         time.sleep(1.8)
