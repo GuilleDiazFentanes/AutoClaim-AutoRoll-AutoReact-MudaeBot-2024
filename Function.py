@@ -42,9 +42,9 @@ def simpleRoll():
             cardSeries = 'null'
             cardPower = 0
         except KeyError:
-            nombreCarta = 'null'
-            SerieCarta = 'null'
-            poderCarta = 0
+            cardName = 'null'
+            cardSeries = 'null'
+            cardPower = 0
 
         if not 'footer' in jsonCard[0]['embeds'][0] or not 'icon_url' in jsonCard[0]['embeds'][0]['footer']:
             print(i,' - '+unclaimed+' ---- ',cardPower,' - '+cardName+' - '+cardSeries)
