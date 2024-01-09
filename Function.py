@@ -45,7 +45,8 @@ def simpleRoll():
             cardName = 'null'
             cardSeries = 'null'
             cardPower = 0
-
+        except ValueError:
+            cardPower = 0
         if not 'footer' in jsonCard[0]['embeds'][0] or not 'icon_url' in jsonCard[0]['embeds'][0]['footer']:
             print(i,' - '+unclaimed+' ---- ',cardPower,' - '+cardName+' - '+cardSeries)
             if cardSeries in Vars.desiredSeries:
