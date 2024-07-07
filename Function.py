@@ -61,9 +61,29 @@ def simpleRoll():
                 x -= 1 
                 print(kakera+' - '+kakera+' - Trying to react to '+ cardsKakera+ ' of '+ cardName)
                 bot.click( jsonCard[0]['author']['id'], channelID =jsonCard[0]['channel_id'], guildID = Vars.serverId, messageID=jsonCard[0]['id'], messageFlags=jsonCard[0]['flags'], data={'component_type': 2, 'custom_id': jsonCard[0]['components'][0]['components'][0]['custom_id']},)
-
+                time.sleep(1.0)
         except IndexError:
             cardsKakera = 'null'
+
+        try:
+            cardsKakera2 = (jsonCard[0]['components'][0]['components'][1]['emoji']['name'])
+            if cardsKakera2 in Vars.desiredKakeras:
+                x -= 1 
+                print(kakera+' - '+kakera+' - Trying to react to '+ cardsKakera2+ ' of '+ cardName)
+                bot.click( jsonCard[0]['author']['id'], channelID =jsonCard[0]['channel_id'], guildID = Vars.serverId, messageID=jsonCard[0]['id'], messageFlags=jsonCard[0]['flags'], data={'component_type': 2, 'custom_id': jsonCard[0]['components'][0]['components'][1]['custom_id']},)
+                time.sleep(1.0)
+        except IndexError:
+            cardsKakera2 = 'null'
+
+        try:
+            cardsKakera3 = (jsonCard[0]['components'][0]['components'][2]['emoji']['name'])
+            if cardsKakera3 in Vars.desiredKakeras:
+                x -= 1 
+                print(kakera+' - '+kakera+' - Trying to react to '+ cardsKakera3+ ' of '+ cardName)
+                bot.click( jsonCard[0]['author']['id'], channelID =jsonCard[0]['channel_id'], guildID = Vars.serverId, messageID=jsonCard[0]['id'], messageFlags=jsonCard[0]['flags'], data={'component_type': 2, 'custom_id': jsonCard[0]['components'][0]['components'][2]['custom_id']},)
+                time.sleep(1.0)
+        except IndexError:
+            cardsKakera3 = 'null'
 
         i += 1
     print('Rolling ended')
