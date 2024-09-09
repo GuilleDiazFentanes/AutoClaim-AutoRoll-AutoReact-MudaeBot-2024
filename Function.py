@@ -18,7 +18,7 @@ def simpleRoll():
     claimed = '❤️'
     unclaimed = '🤍'
     kakera = '💎'
-    emoji='👍'
+    emoji='🐿️'
     rollCommand = SlashCommander(bot.getSlashCommands(botID).json()).get([Vars.rollCommand])
     continueRolling = True
 
@@ -68,7 +68,6 @@ def simpleRoll():
 
             except IndexError:
                 cardsKakera = 'null'
-                
         i += 1
     print('Rolling ended')
 
