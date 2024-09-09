@@ -18,6 +18,7 @@ def simpleRoll():
     claimed = '❤️'
     unclaimed = '🤍'
     kakera = '💎'
+    emoji='👍'
     rollCommand = SlashCommander(bot.getSlashCommands(botID).json()).get([Vars.rollCommand])
     continueRolling = True
 
@@ -51,24 +52,26 @@ def simpleRoll():
             print(i,' - '+unclaimed+' ---- ',cardPower,' - '+cardName+' - '+cardSeries)
             if cardSeries in Vars.desiredSeries:
                 print('Trying to Claim '+ cardName)
-                r= requests.put(f'https://discord.com/api/v8/channels/{Vars.channelId}/messages/{idMessage}/reactions/🐿️/%40me',headers=auth)
+                r= requests.put(f'https://discord.com/api/v8/channels/{Vars.channelId}/messages/{idMessage}/reactions/{emoji}/%40me',headers=auth)
         else: 
             print(i,' - '+claimed+' ---- ',cardPower,' - '+cardName+' - '+cardSeries)
 
-        try:
-            cardsKakera = (jsonCard[0]['components'][0]['components'][0]['emoji']['name'])
-            if cardsKakera in Vars.desiredKakeras:
-                x -= 1 
-                print(kakera+' - '+kakera+' - Trying to react to '+ cardsKakera+ ' of '+ cardName)
-                bot.click( jsonCard[0]['author']['id'], channelID =jsonCard[0]['channel_id'], guildID = Vars.serverId, messageID=jsonCard[0]['id'], messageFlags=jsonCard[0]['flags'], data={'component_type': 2, 'custom_id': jsonCard[0]['components'][0]['components'][0]['custom_id']},)
+        cardsKakera = (jsonCard[0]['components'][0]['components'][0]['emoji']['name'])
+        components = jsonCard[0]["components"][0]['components']
+        for index in range(len(components)):
+            try:
+                if cardsKakera in Vars.desiredKakeras:
+                    x -= 1 
+                    print(kakera+' - '+kakera+' - Trying to react to '+ cardsKakera+ ' of '+ cardName)
+                    bot.click(jsonCard[0]['author']['id'], channelID =jsonCard[0]['channel_id'], guildID = Vars.serverId, messageID=jsonCard[0]['id'], messageFlags=jsonCard[0]['flags'], data={'component_type': 2, 'custom_id': components[index]['custom_id']})
+                    time.sleep(0.5)
 
-        except IndexError:
-            cardsKakera = 'null'
-
+            except IndexError:
+                cardsKakera = 'null'
+                
         i += 1
     print('Rolling ended')
 
     if(Vars.pokeRoll):
         print('\nTrying to roll Pokeslot')
         requests.post(url=url , headers = auth, data = {'content' : '$p'})
-
